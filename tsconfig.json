@@ -1,0 +1,28 @@
+{
+	"exclude": [
+		"node_modules",
+		"dist"
+	],
+	"compilerOptions": {
+		"target": "ES6",
+		"module": "commonjs",
+		"forceConsistentCasingInFileNames": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"noImplicitAny": true,
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"rootDir": "./src",
+		"outDir": "dist",
+		// "baseUrl": ".",
+
+	},
+	"plugins": [
+		{
+			"transform": "typescript-transform-paths"
+		}
+	],
+	"include": [
+		"./src/**/*"
+, "src/test"	]
+}
