@@ -173,6 +173,26 @@ export const main06 = async () => {
   //$ No puedes editar "listName", estás obligado a hacer una promesa para cada nombre de la lista del profesional que recibas.
 
    const getProfessionalByListName2 = async (listName: ProfessionalName[]) => {
+    const getProfessionalByListName2 = async (listName: ProfessionalName[]) => {
+
+      const result = [];
+      const blackList = ["john_doe", "alex_smith"];
+
+      for (const name of listName) {
+
+
+          const pro = await getProfessionalByName(name);
+          if (blackList.includes(name)) {
+              console.log("Profesional bloqueado:", name);
+               continue;
+          }
+
+          else result.push(pro);
+          console.log("Profesional obtenido:", name);
+
+      }
+      return result;
+  }
     
      
 
